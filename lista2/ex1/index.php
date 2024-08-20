@@ -10,6 +10,11 @@
     <form action="resposta.php" method="post">
         <div class="row m-5">
             <div class="col">
+                <h1>EX1. Somar dois números.</h1>
+            </div>
+        </div>
+        <div class="row m-5">
+            <div class="col">
                 <label for="n1" class="form-label">Número 1</label>
                 <input type="text" placeholder="Número 1" name="n1" class="form-control">
             </div>
