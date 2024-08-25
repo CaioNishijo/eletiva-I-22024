@@ -16,7 +16,7 @@
 		</div>
 		<div class="row m-5">
 			<div class="col">
-				<label class="form-label">Valor em metros</label>
+				<label for="metros" class="form-label">Valor em metros</label>
 				<input type="number" class="form-control" name="metros" id="metros" placeholder="Insira o valor em metros">
 			</div>
 		</div>
