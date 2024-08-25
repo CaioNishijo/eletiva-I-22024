@@ -16,7 +16,7 @@
 		</div>
 		<div class="row m-5">
 			<div class="col">
-				<label class="form-label">Temperatura (°C)</label>
+				<label for="temp" class="form-label">Temperatura (°C)</label>
 				<input type="number" class="form-control" name="temp" id="temp" placeholder="Insira a temperatura em graus celsius">
 			</div>
 		</div>
