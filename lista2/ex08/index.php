@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	    <title>Exercício 2</title>	
+    <title>Exercício 8</title>	
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 	<form action="resultado.php" method="post">
 		<div class="row m-5">
 			<div class="col">
-				<label for="n1" class="form-label">Número 1</label>
-				<input class="form-control" name="n1" id="n1" placeholder="Insira o primeiro número">
+				<label for="n1" class="form-label">Base(m)</label>
+				<input class="form-control" name="n1" id="n1" placeholder="Insira a base do retângulo">
 			</div>
 			<div class="col">
-				<label for="n2" class="form-label">Número 2</label>
-				<input class="form-control" name="n2" id="n2" placeholder="Insira o segundo número">
+					<label for="n2" class="form-label">Área(m)</label>
+				<input class="form-control" name="n2" id="n2" placeholder="Insira a área do retângulo">
 			</div>	
 		</div>	
 		<div class="row m-5">
