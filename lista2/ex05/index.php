@@ -11,15 +11,15 @@
 	<form method="post" action="resultado.php">
 		<div class="row m-5">
 			<div class="col">
-				<label class="form-label">Nota 1</label>
+				<label for="n1" class="form-label">Nota 1</label>
 				<input class="form-control" name="n1" id="n1" placeholder="Insira a primeira nota">
 			</div>
 			<div class="col">
-				<label class="form-label">Nota 2</label>
+				<label for="n2" class="form-label">Nota 2</label>
 				<input class="form-control" name="n1" id="n1" placeholder="Insira a segunda nota">
 			</div>
 			<div class="col">
-				<label class="form-label">Nota 3</label>
+				<label for="n3" class="form-label">Nota 3</label>
 				<input class="form-control" name="n1" id="n1" placeholder="Insira a terceira nota">
 			</div>
 		</div>
