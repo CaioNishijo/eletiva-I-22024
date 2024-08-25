@@ -16,7 +16,7 @@
 		</div>
 		<div class="row m-5">
 			<div class="col">
-				<label class="form-label">Raio do círculo</label>
+				<label for="raio" class="form-label">Raio do círculo</label>
 				<input type="number" class="form-control" name="raio" id="raio" placeholder="Insira o raio do círculo">
 			</div>
 		</div>
