@@ -16,7 +16,7 @@
 		</div>
 		<div class="row m-5">
 			<div class="col">
-				<label class="form-label">Valor em quilômetros</label>
+				<label for="km" class="form-label">Valor em quilômetros</label>
 				<input type="number" class="form-control" name="km" id="km" placeholder="Insira o valor em km">
 			</div>
 		</div>
