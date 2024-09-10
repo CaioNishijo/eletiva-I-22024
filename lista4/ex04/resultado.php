@@ -12,11 +12,14 @@
 	<?php
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			try{
+				function checarData(int $mes, int $dia, int $ano):bool{
+					return checkdate($mes, $dia, $ano);
+				}
 				$dia = (int)$_POST["dia"];
 				$mes = (int)$_POST["mes"];
 				$ano = (int)$_POST["ano"];
 				
-				if(checkdate($mes, $dia, $ano)){
+				if(checarData($mes, $dia, $ano)){
 					echo sprintf("%02d/%02d/%02d", $dia, $mes, $ano);
 				}else{
 					echo"Data inválida";

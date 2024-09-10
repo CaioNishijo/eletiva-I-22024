@@ -12,10 +12,13 @@
 	<?php
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			try{
+				function transformarPalavra(string $palavra): void{
+					echo strtoupper($palavra)."\n";
+					echo strtolower($palavra);
+				}
 				$palavra = (string)$_POST["palavra"];
 
-				echo strtoupper($palavra)."\n";
-				echo strtolower($palavra);
+				transformarPalavra($palavra);
 			}catch(Exception $e){
 				echo"Erro".$e->getMessage();
 			}

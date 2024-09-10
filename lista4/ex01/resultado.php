@@ -12,8 +12,11 @@
 	<?php
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			try{
-				$palavra = (string)$_POST["palavra"];
-				$caracteres = (int) strlen($palavra);
+				function contarCaracteres(string $palavra): int{
+					return strlen($palavra);
+				}
+				$palavra = (string) $_POST["palavra"];
+				$caracteres = (int) contarCaracteres($palavra);
 				echo"A palavra tem $caracteres caracteres";
 			}catch(Exception $e){
 				echo"Erro".$e->getMessage();

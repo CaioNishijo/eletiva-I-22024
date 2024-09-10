@@ -12,12 +12,15 @@
 	<?php
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			try{
+				function verificar(string $palavra1, string $palavra2):int {
+					return strpos($palavra1, $palavra2);
+				}
 				$palavra = (string)$_POST["palavra"];
 				$palavra2 = (string)$_POST["palavra2"];
 				
-				$estaContida = (bool) strpos($palavra, $palavra2);
+				$ocorrencia = (int) verificar($palavra, $palavra2);
 
-				if($estaContida){
+				if($ocorrencia){
 					echo"A segunda string está contida na primeira";
 				}else{
 					echo"A segunda string não está contida na primeira";

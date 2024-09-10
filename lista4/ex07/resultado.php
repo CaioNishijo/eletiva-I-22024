@@ -12,17 +12,22 @@
 	<?php
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			try{
+				function compararData(string $data1, string $data2): int{
+					$data1 = new DateTime($data1);
+					$data2 = new DateTime($data2);
+
+					$intervalo = $data1->diff($data2);
+
+					$intervalo_dias = $intervalo->days;
+
+					return $intervalo_dias;
+				}
 				$data1 = (string)$_POST["data1"];
 				$data2 = (string)$_POST["data2"];
+				
+				$intervalo = compararData($data1, $data2);
 
-				$data1 = new DateTime($data1);
-				$data2 = new DateTime($data2);
-
-				$intervalo = $data1->diff($data2);
-
-				$intervalo_dias = $intervalo->days;
-
-				echo"O intervalo em dias é $intervalo_dias";
+				echo"O intervalo em dias é $intervalo";
 
 					
 			}catch(Exception $e){

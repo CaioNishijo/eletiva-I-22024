@@ -12,9 +12,12 @@
 	<?php
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			try{
+				function elevarAoQuadrado(int $valor):int{
+					return $valor * $valor;
+				}
 				$valor = (int)$_POST["valor"];
 	
-				echo"Valor elevado ao quadrado: ".pow($valor, 2);
+				echo"Valor elevado ao quadrado: ".elevarAoQuadrado($valor, 2);
 			}catch(Exception $e){
 				echo"Erro".$e->getMessage();
 			}

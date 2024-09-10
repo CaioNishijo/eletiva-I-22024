@@ -12,9 +12,12 @@
 	<?php
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
 			try{
+				function arredondar(float $num):int{
+					return round($num);
+				}
 				$valor = (float)$_POST["valor"];
 	
-				echo"Valor arredondado: ".round($valor);
+				echo"Valor arredondado: ".arredondar($valor);
 			}catch(Exception $e){
 				echo"Erro".$e->getMessage();
 			}
