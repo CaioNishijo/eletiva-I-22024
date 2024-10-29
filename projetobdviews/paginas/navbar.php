@@ -1,10 +1,10 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['acesso'])){
-    header('Location: login.php');
-}
+    session_start();
+    if(!isset($_SESSION['acesso'])){
+        header('Location: login.php');        
+    }
 ?>
+
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/dashboard">Sistema de Compras de Produtos</a>
@@ -16,14 +16,20 @@ if(!isset($_SESSION['acesso'])){
 
         <!-- Após desenvolver o código em PHP, essa funcionalidade só será visível ao administrador -->
          <!-- Início -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Usuários
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="usuarios.php">Gerenciar</a></li>
-          </ul>
-        </li>
+        <?php
+          if ($_SESSION['nivel'] == 'adm'):
+        ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuários
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="usuarios.php">Gerenciar</a></li>
+            </ul>
+          </li>
+        <?php
+          endif;
+        ?>
          <!-- Fim -->
 
         <li class="nav-item dropdown">
@@ -58,10 +64,10 @@ if(!isset($_SESSION['acesso'])){
       <ul class="navbar-nav ms-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Seja bem vindo(a) 
                     <?php
-                      if(isset($_SESSION['nome'])){
-                        echo "Seja bem vindo, ".$_SESSION['nome'];
-                      }
+                      if (isset($_SESSION['usuario']))
+                        echo $_SESSION['usuario'];
                     ?>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end">
