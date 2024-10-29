@@ -1,6 +1,22 @@
 <?php 
     require_once 'cabecalho.php'; 
     require_once 'navbar.php';
+    require_once '../funcoes/produtos.php';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $nome = $_POST['nome'];
+        $descricao = $_POST['descricao'];
+        $preco = (float) $_POST['preco'];
+        $estoque_minimo = (int) $_POST['estoque_minimo'];
+        $categoria_id = (int) $_POST['categoria_id'];
+
+        if (criarProduto($nome, $descricao, $preco, $estoque_minimo, $categoria_id)) {
+            echo "<div class='alert alert-success'>Produto criado com sucesso!</div>";
+            header("Location: produtos.php");
+        } else {
+            echo "<div class='alert alert-danger'>Erro ao criar produto.</div>";
+        }
+    }
 ?>
 
 <div class="container mt-5">
@@ -25,9 +41,7 @@
         </div>
         <div class="mb-3">
             <label for="categoria_id" class="form-label">Categoria</label>
-            <select name="categoria_id" id="categoria_id" class="form-select" required>
-                    <option value="1">Categoria</option>
-            </select>
+            <input type="number" name="categoria_id" id="categoria_id" class="form-control" required>
         </div>
         <button type="submit" class="btn btn-primary">Criar Produto</button>
     </form>

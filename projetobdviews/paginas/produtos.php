@@ -1,6 +1,9 @@
 <?php 
     require_once 'cabecalho.php'; 
     require_once 'navbar.php';    
+    require_once '../funcoes/produtos.php';
+
+    $produtos = buscarProdutos();
 ?>
 
 <div class="container mt-5">
@@ -19,20 +22,19 @@
             </tr>
         </thead>
         <tbody>
-            
+            <?php foreach ($produtos as $produto): ?>
             <tr>
-                <td>1</td>
-                <td>Tênis</td>
-                <td>Tênis Azul</td>
-                <td>R$20,00</td>
-                <td>10</td>
-                <td>Calçado</td>
+                <td><?= $produto['id']; ?></td>
+                <td><?= $produto['descricao']; ?></td>
+                <td><?= $produto['preco']; ?></td>
+                <td><?= $produto['estoque_minimo']; ?></td>
+                <td><?= $produto['categoria_nome']; ?></td>
                 <td>
-                    <a href="editar_produto.php" class="btn btn-warning">Editar</a>
-                    <a href="excluir_produto.php" class="btn btn-danger">Excluir</a>
+                    <a href="editar_produto.php?id=<?= $produto['id']; ?>" class="btn btn-warning btn-sm">Editar</a>
+                    <a href="excluir_produto.php?id=<?= $produto['id']; ?>" class="btn btn-danger btn-sm">Deletar</a>
                 </td>
             </tr>
-            
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>
