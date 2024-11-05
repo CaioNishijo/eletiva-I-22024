@@ -1,6 +1,9 @@
 <?php
     require_once 'cabecalho.php'; 
     require_once 'navbar.php';    
+    require_once '../funcoes/compras.php';    
+
+    $listaCompras = retornarCompras();
 ?>
 
 <div class="container mt-5">
@@ -17,15 +20,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>10/10/2024</td>
-                <td>Tênis</td>
-                <td>20</td>
-                <td>
-                    <a href="excluir_compra.php" class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
+            <?php foreach($listaCompras as $compra): ?>
+                <tr>
+                    <td><?= $compra["id"]?></td>
+                    <td><?= $compra["data_compra"]?></td>
+                    <td><?= $compra["nome"]?></td>
+                    <td><?= $compra["quantidade"]?></td>
+                    <td>
+                        <a href="excluir_compra.php?id=<?= $compra["id"]?>" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>   
+            <?php endforeach;?>
         </tbody>
     </table>
 </div>

@@ -1,6 +1,18 @@
 <?php 
     require_once 'cabecalho.php'; 
     require_once 'navbar.php';
+    require_once '../funcoes/categorias.php';
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $nome = $_POST["nome"];
+
+        if (criarCategoria($nome)) {
+            echo "<div class='alert alert-success'>Produto criado com sucesso!</div>";
+            header("Location: categorias.php");
+        } else {
+            echo "<div class='alert alert-danger'>Erro ao criar produto.</div>";
+        }
+    }
 ?>
 
 <div class="container mt-5">

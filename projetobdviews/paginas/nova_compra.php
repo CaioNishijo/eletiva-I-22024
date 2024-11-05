@@ -1,6 +1,19 @@
 <?php 
     require_once 'cabecalho.php'; 
     require_once 'navbar.php';
+    require_once '../funcoes/compras.php';
+    require_once '../funcoes/produtos.php';
+
+    $listaProdutos = buscarProdutos();
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $data = $_POST["data"];
+        $produto_id = $_POST["produto_id"];
+        $quantidade = $_POST["quantidade"];
+
+        criarCompra($data, $produto_id, $quantidade);
+        header("Location: compras.php");
+    }
 ?>
 
 <div class="container mt-5">
@@ -14,7 +27,9 @@
         <div class="mb-3">
             <label for="produto_id" class="form-label">Produto</label>
             <select name="produto_id" id="produto_id" class="form-select" required>
-                    <option value="1">Produto 1</option>
+                <?php foreach($listaProdutos as $produto): ?>
+                    <option value=<?= $produto["id"]; ?>><?= $produto["nome"]; ?></option>
+                <?php endforeach;?>
             </select>
         </div>
         <div class="mb-3">
